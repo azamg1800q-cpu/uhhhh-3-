@@ -568,8 +568,17 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-top: 20px; z-index: 10; position: relative;">
+    <button onclick="playMusic()" id="music-btn" style="background: rgba(192,57,43,0.3); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 10px 25px; border-radius: 30px; font-size: 1rem; backdrop-filter: blur(8px); cursor: pointer;">🎵 Play Song</button>
+</div>
+<iframe id="yt-player" width="0" height="0" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;"></iframe>
             <button class="btn btn-bottom hiddenbtn" id="p5-restart" onclick="goToPage(1)" style="bottom: 30px;">Start Over 🔄</button>
         </section>
+        function playMusic() {
+    document.getElementById('yt-player').src = "https://www.youtube.com/embed/2HAm9sgGSlg?autoplay=1";
+    document.getElementById('music-btn').innerText = "🎶 Playing...";
+    document.getElementById('music-btn').disabled = true;
+}
     </main>
 
     <script>
